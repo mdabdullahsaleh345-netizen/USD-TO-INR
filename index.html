@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USD to INR Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-card">
+            <h1>💱 Currency Converter</h1>
+            <p class="subtitle">USD to INR</p>
+            
+            <div class="input-group">
+                <label for="usd-input">Enter USD Amount:</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol">$</span>
+                    <input 
+                        type="number" 
+                        id="usd-input" 
+                        placeholder="0.00" 
+                        min="0" 
+                        step="0.01"
+                    >
+                </div>
+            </div>
+
+            <div class="exchange-rate">
+                <p>Current Rate: <span id="rate">1 USD = ₹ 83.12</span></p>
+            </div>
+
+            <div class="input-group">
+                <label for="inr-output">INR Amount:</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol">₹</span>
+                    <input 
+                        type="number" 
+                        id="inr-output" 
+                        placeholder="0.00" 
+                        readonly
+                    >
+                </div>
+            </div>
+
+            <button class="reset-btn" onclick="resetConverter()">Reset</button>
+
+            <div class="conversion-history">
+                <h3>Recent Conversions</h3>
+                <ul id="history-list">
+                    <li class="empty-message">No conversions yet</li>
+                </ul>
+                <button class="clear-history-btn" onclick="clearHistory()" style="display: none;" id="clear-btn">Clear History</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
